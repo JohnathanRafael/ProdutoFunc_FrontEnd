@@ -6,7 +6,7 @@
  *
  *
  */
-package br.ueg.prog.webi.api.exception;
+package br.progweb.prog.api.exception;;
 
 /**
  * Interface responsável por definir o contrato da instância que conterá o

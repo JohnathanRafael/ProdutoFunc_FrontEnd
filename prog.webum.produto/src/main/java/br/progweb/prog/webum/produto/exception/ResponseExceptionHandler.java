@@ -2,10 +2,10 @@
  * ResponseExceptionHandler.java
  * Copyright (c) UEG.
  */
-package br.ueg.prog.webi.faculdade.exception;
+package br.progweb.prog.webum.produto.exception;
 
-import br.ueg.prog.webi.api.exception.ApiRestResponseExceptionHandler;
-import br.ueg.prog.webi.api.exception.MessageCode;
+import br.progweb.prog.api.exception.ApiRestResponseExceptionHandler;
+import br.progweb.prog.api.exception.MessageCode;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 
@@ -23,7 +23,7 @@ public class ResponseExceptionHandler extends ApiRestResponseExceptionHandler {
 	 */
 	@Override
 	protected MessageCode getCodeInternalServerError() {
-		return br.ueg.prog.webi.faculdade.exception.SistemaMessageCode.ERRO_INESPERADO;
+		return SistemaMessageCode.ERRO_INESPERADO;
 	}
 
 }

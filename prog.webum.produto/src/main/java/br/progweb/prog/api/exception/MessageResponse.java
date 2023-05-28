@@ -9,7 +9,7 @@
 package br.progweb.prog.api.exception;
 
 
-import br.ueg.prog.webi.faculdade.utils.CollectionUtil;
+import br.progweb.prog.webum.utils.CollectionUtil;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;

@@ -8,7 +8,7 @@
  */
 package br.progweb.prog.api.exception;
 
-import br.ueg.prog.webi.api.util.Util;
+import br.progweb.prog.api.util.Util;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.beans.TypeMismatchException;

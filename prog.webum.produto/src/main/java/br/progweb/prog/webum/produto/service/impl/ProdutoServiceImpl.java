@@ -1,5 +1,7 @@
 package br.progweb.prog.webum.produto.service.impl;
 
+import br.progweb.prog.api.exception.BusinessException;
+import br.progweb.prog.webum.produto.exception.SistemaMessageCode;
 import br.progweb.prog.webum.produto.model.Produto;
 import br.progweb.prog.webum.produto.repository.ProdutoRepository;
 import br.progweb.prog.webum.produto.service.ProdutoService;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -38,6 +41,10 @@ public class ProdutoServiceImpl implements ProdutoService {
 
     @SneakyThrows
     private void validarCamposObrigatorios(Produto produto) {
+        if(Objects.isNull(produto)){
+            throw new BusinessException(SistemaMessageCode.ERRO_CAMPOS_OBRIGATORIOS);
+        }
+
         List<String> erros = new ArrayList<>();
 
         if(Strings.isEmpty(produto.getProdutoNome())){
@@ -58,7 +65,7 @@ public class ProdutoServiceImpl implements ProdutoService {
         }
 
         if(!erros.isEmpty()){
-            throw  new IllegalArgumentException("Erro ao Validar dados do Produto: "+ String.join(",", erros));
+            throw  new BusinessException(SistemaMessageCode.ERRO_CAMPOS_OBRIGATORIOS);
         }
 
     }
@@ -89,7 +96,7 @@ public class ProdutoServiceImpl implements ProdutoService {
     }
 
     private Produto recuperarProduto(Long codigo) {
-        Produto produtoBD = produtoRepository.findById(codigo).orElseThrow( () -> new IllegalArgumentException("Erro ao localizar o produto !"));
+        Produto produtoBD = produtoRepository.findById(codigo).orElseThrow( () -> new BusinessException(SistemaMessageCode.ERRO_REGISTRO_NAO_ENCONTRADO));
         return produtoBD;
     }
 

@@ -6,9 +6,9 @@
  *
  *
  */
-package br.progweb.prog.api.exception.;
+package br.progweb.prog.api.exception;
 
-import br.ueg.prog.webi.api.util.Util;
+import br.progweb.prog.api.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;

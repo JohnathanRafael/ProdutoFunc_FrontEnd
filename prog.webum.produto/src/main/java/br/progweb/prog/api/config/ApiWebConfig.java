@@ -19,12 +19,13 @@ public class ApiWebConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
+        config.addAllowedOriginPattern("*");
         config.addAllowedHeader("*");
         config.addAllowedMethod(HttpMethod.GET);
         config.addAllowedMethod(HttpMethod.POST);
         config.addAllowedMethod(HttpMethod.PUT);
         config.addAllowedMethod(HttpMethod.DELETE);
+        config.addAllowedMethod(HttpMethod.PATCH);
         config.addAllowedMethod(HttpMethod.OPTIONS);
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
