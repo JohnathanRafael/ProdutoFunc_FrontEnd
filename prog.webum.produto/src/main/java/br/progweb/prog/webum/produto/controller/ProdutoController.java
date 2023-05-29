@@ -69,7 +69,7 @@ public class ProdutoController {
     @Operation(description = "Método utilizado para realizar a alteracao dos dados de um produto", responses = {
             @ApiResponse(responseCode = "200", description = "Produto Alterado",
                     content = @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = ProdutoDadosAlterarDTO.class))),
+                            schema = @Schema(implementation = Object.class))),
             @ApiResponse(responseCode = "404", description = "Produto Não encontrado",
                     content = @Content(mediaType = "application/json"))})
     public ResponseEntity<ProdutoDTO> alterar(@RequestBody() ProdutoDadosAlterarDTO produto, @PathVariable(name = "produtoCodigo") Long codigo ){
