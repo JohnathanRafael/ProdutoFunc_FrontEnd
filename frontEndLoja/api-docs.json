@@ -1,0 +1,860 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Loja ",
+    "license": {
+      "name": "Apache License 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/v1/produto/{id}": {
+      "get": {
+        "tags": [
+          "produto-controller"
+        ],
+        "description": "Obter os dados completos de uma entidiade pelo id informado!",
+        "operationId": "ObterPorId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entidade encontrada",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "produto-controller"
+        ],
+        "description": "Método utilizado para altlerar os dados de uma entidiade",
+        "operationId": "alterar",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProdutoDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Listagem geral",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "produto-controller"
+        ],
+        "description": "Metodo para enviar mensagem",
+        "operationId": "enviarMensagem",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TelefoneDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Mensagem enviada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TelefoneDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "produto-controller"
+        ],
+        "description": "Método utilizado para remover uma entidiade pela id informado",
+        "operationId": "remover",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entidade Removida",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pessoaJuridica/{id}": {
+      "get": {
+        "tags": [
+          "pessoa-juridica-controller"
+        ],
+        "description": "Obter os dados completos de uma entidiade pelo id informado!",
+        "operationId": "ObterPorId_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entidade encontrada",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "pessoa-juridica-controller"
+        ],
+        "description": "Método utilizado para altlerar os dados de uma entidiade",
+        "operationId": "alterar_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PessoaJuridicaDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Listagem geral",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "pessoa-juridica-controller"
+        ],
+        "description": "Método utilizado para remover uma entidiade pela id informado",
+        "operationId": "remover_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entidade Removida",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pessoaFisica/{id}": {
+      "get": {
+        "tags": [
+          "pessoa-fisica-controller"
+        ],
+        "description": "Obter os dados completos de uma entidiade pelo id informado!",
+        "operationId": "ObterPorId_2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entidade encontrada",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "pessoa-fisica-controller"
+        ],
+        "description": "Método utilizado para altlerar os dados de uma entidiade",
+        "operationId": "alterar_2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PessoaFisicaDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Listagem geral",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "pessoa-fisica-controller"
+        ],
+        "description": "Método utilizado para remover uma entidiade pela id informado",
+        "operationId": "remover_2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entidade Removida",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/produto": {
+      "get": {
+        "tags": [
+          "produto-controller"
+        ],
+        "description": "Listagem Geral",
+        "operationId": "listAll",
+        "responses": {
+          "200": {
+            "description": "Listagem geral",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "produto-controller"
+        ],
+        "description": "Método utilizado para realizar a inclusão de um entidade",
+        "operationId": "incluir",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProdutoDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Entidade Incluida",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pessoaJuridica": {
+      "get": {
+        "tags": [
+          "pessoa-juridica-controller"
+        ],
+        "description": "Listagem Geral",
+        "operationId": "listAll_1",
+        "responses": {
+          "200": {
+            "description": "Listagem geral",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "pessoa-juridica-controller"
+        ],
+        "description": "Método utilizado para realizar a inclusão de um entidade",
+        "operationId": "incluir_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PessoaJuridicaDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Entidade Incluida",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pessoaFisica": {
+      "get": {
+        "tags": [
+          "pessoa-fisica-controller"
+        ],
+        "description": "Listagem Geral",
+        "operationId": "listAll_2",
+        "responses": {
+          "200": {
+            "description": "Listagem geral",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "pessoa-fisica-controller"
+        ],
+        "description": "Método utilizado para realizar a inclusão de um entidade",
+        "operationId": "incluir_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PessoaFisicaDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Entidade Incluida",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Erro de Negócio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FieldResponse": {
+        "type": "object",
+        "properties": {
+          "attribute": {
+            "type": "string",
+            "description": "Nome do atributo"
+          },
+          "description": {
+            "type": "string",
+            "description": "Descrição da validação"
+          }
+        },
+        "description": "Atributos de validação"
+      },
+      "MessageResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Código da Mensagem"
+          },
+          "status": {
+            "type": "integer",
+            "description": "Status HTTP",
+            "format": "int32"
+          },
+          "error": {
+            "type": "string",
+            "description": "Descrição erro HTTP"
+          },
+          "message": {
+            "type": "string",
+            "description": "Mensagem de negócio"
+          },
+          "parameters": {
+            "type": "array",
+            "description": "Parâmetros da mensagem",
+            "items": {
+              "type": "object",
+              "description": "Parâmetros da mensagem"
+            }
+          },
+          "attributes": {
+            "type": "array",
+            "description": "Atributos de validação",
+            "items": {
+              "$ref": "#/components/schemas/FieldResponse"
+            }
+          }
+        }
+      },
+      "ProdutoDTO": {
+        "type": "object",
+        "properties": {
+          "produtoCodigo": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "produtoNome": {
+            "type": "string"
+          },
+          "produtoMarca": {
+            "type": "string"
+          },
+          "produtoCategoria": {
+            "type": "string"
+          },
+          "produtoValorVenda": {
+            "type": "number"
+          },
+          "produtoValorCusto": {
+            "type": "number"
+          },
+          "statusProduto": {
+            "type": "string"
+          },
+          "produtoEstoque": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "produtolancamento": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "PessoaJuridicaDTO": {
+        "type": "object",
+        "properties": {
+          "pessoaJuridicaCnpj": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pessoaJuridicaIe": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pessoaCodigo": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pessoaNome": {
+            "type": "string"
+          },
+          "pessoaTelefone": {
+            "type": "string"
+          },
+          "pessoaEmail": {
+            "type": "string"
+          },
+          "pessoaLogradouro": {
+            "type": "string"
+          },
+          "pessoaNumero": {
+            "type": "string"
+          },
+          "pessoaBairro": {
+            "type": "string"
+          },
+          "pessoaComplemento": {
+            "type": "string"
+          },
+          "pessoaUf": {
+            "type": "string"
+          },
+          "pessoaMunicipio": {
+            "type": "string"
+          }
+        }
+      },
+      "PessoaFisicaDTO": {
+        "type": "object",
+        "properties": {
+          "pessoaFisicaOrgaoEmissor": {
+            "type": "string"
+          },
+          "pessoaFisicaRg": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pessoaFisicaCpf": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pessoaCodigo": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pessoaNome": {
+            "type": "string"
+          },
+          "pessoaTelefone": {
+            "type": "string"
+          },
+          "pessoaEmail": {
+            "type": "string"
+          },
+          "pessoaLogradouro": {
+            "type": "string"
+          },
+          "pessoaNumero": {
+            "type": "string"
+          },
+          "pessoaBairro": {
+            "type": "string"
+          },
+          "pessoaComplemento": {
+            "type": "string"
+          },
+          "pessoaUf": {
+            "type": "string"
+          },
+          "pessoaMunicipio": {
+            "type": "string"
+          }
+        }
+      },
+      "TelefoneDTO": {
+        "type": "object",
+        "properties": {
+          "numeroTelefone": {
+            "type": "string"
+          },
+          "linkTelefone": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

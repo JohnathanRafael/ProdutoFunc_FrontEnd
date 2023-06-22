@@ -1,0 +1,40 @@
+<h1 mat-dialog-title class="centered-content">
+  {{titulo}}
+</h1>
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="onSubmit()"
+  class="form"
+>
+<mat-dialog-content class="centered-content">
+  {{mensagem}}
+</mat-dialog-content>
+
+  <mat-dialog-content class="centered-content">
+  <mat-form-field>
+    <mat-label>Telefone do Whatsapp</mat-label>
+    <input matInput mask="(00) 0 0000-0000" formControlName="numeroTelefone" >
+    <mat-error *ngIf="handleError('numeroTelefone', 'required')">
+      Digite um telefone válido
+    </mat-error>
+  </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-content class="centered-content">
+    Para informar um número fixo substitua o primeiro 9 por 0.
+  </mat-dialog-content>
+
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button
+          color="primary"
+          type="submit"
+          tabindex="1">Enviar</button>
+  <button *ngIf="showCancelButton"
+          mat-dialog-close
+          mat-raised-button
+          tabindex="-1">
+          Cancelar
+  </button>
+</mat-dialog-actions>
+</form>
